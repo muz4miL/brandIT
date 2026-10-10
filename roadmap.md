@@ -1,4 +1,5 @@
 # Brand It concept
-- [ ] Build editorial frontend, artwork, and editable content.
-- [ ] Verify navigation, dialogs, accordions, enquiry validation and four viewport widths.
-- [ ] Document handover and missing supplied logo.
+- [x] Build editorial frontend, artwork, and editable content.
+- [x] Verify navigation, dialogs, accordions, enquiry validation and four viewport widths.
+- [x] Document handover and missing supplied logo.
+- [ ] Replace plain brand label with supplied logo — blocked: original logo was not attached.
