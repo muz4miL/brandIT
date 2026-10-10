@@ -1,29 +1,20 @@
-# Welcome to your Lovable project
+# Brand It — creative studio concept
 
-This project was built with [Lovable](https://lovable.dev).
+## Run locally
+`bun install`, then `bun run dev`. Run tests with `bun run test`. React + TypeScript, TanStack Start, Tailwind v4.
 
-## Build with Lovable
+## Content and design
+- `src/lib/brand-config.ts`: typed brand content, navigation, projects, services, process and enquiry validation.
+- `src/components/brand/`: clean individual presentation components for each section.
+- `src/styles.css`: semantic OKLCH colour tokens, fonts, spacing, artwork compositions and breakpoints. Font loading lives in the root route head.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Replace concept imagery
+The three generated fictional project images live in `src/assets/`; replace imports in the configuration with approved work. Maintain fixed aspect ratios and explicit concept labels until real commissioned work is supplied. The studio guideline spread is editable CSS-based artwork.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Only the reference screenshot arrived; the actual Brand It logo attachment is missing. The current plain Brand It text label is not a recreation of the logo. Add the original image and set `brand.logo` to its URL. The logo slot preserves proportions on ivory. Derive a favicon from that actual asset at the same time. No Instagram interface is embedded.
 
-## Development
+## Integrate enquiries
+`submitEnquiry` in `src/lib/brand-config.ts` is the isolated integration seam. It validates input but sends and stores nothing. Replace it with a real endpoint, repeat schema validation server-side, and only report success after confirmed delivery. Keep the demo disclosure until live integration is complete.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Client confirmation
+Confirm provisional services, deliverables, brand positioning and final wording. Obtain the original logo and approved portfolio with usage rights. No real clients, performance results, testimonials, team, company history or office locations are claimed. Email, phone and social configuration are null and not rendered. This frontend requires no backend, database or authentication.
