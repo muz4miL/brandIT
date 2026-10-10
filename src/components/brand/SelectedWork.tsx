@@ -1,0 +1,9 @@
+import { useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { projects } from '@/lib/brand-config';
+import { ProjectDialog } from './ProjectDialog';
+export function SelectedWork() {
+  const [active, setActive] = useState<string | null>(null);
+  return <section id="work" className="work-section container"><div className="section-heading"><div><p className="eyebrow">01 / SELECTED WORK</p><h2>Make an impression.<br /><span className="serif-accent">Leave a mark.</span></h2></div><p className="section-aside">A few possibilities.<br />A lot of personality.</p></div><div className="work-grid">{projects.map((project, index) => <article key={project.name} className={`project project-${index}`}><ProjectDialog project={project} open={active === project.name} onOpenChange={open => setActive(open ? project.name : null)}><Button variant="project" aria-label={`View ${project.name} case study`}><span className="project-image"><img src={project.image} alt={`${project.name} ${project.discipline.toLowerCase()} concept`} width={project.width} height={project.height} loading="lazy" /><span className="concept-tag">CONCEPT PROJECT</span><span className="project-arrow"><ArrowUpRight size={23} /></span></span><span className="project-caption"><span><strong>{project.name}</strong><span>{project.discipline}</span></span><span className="project-index">0{index + 1}</span></span></Button></ProjectDialog></article>)}</div><div className="work-footnote"><span>Imagined brands. Real creative thinking.</span><span>ALL WORK SHOWN IS CONCEPTUAL</span></div></section>;
+}

@@ -1,0 +1,3 @@
+import { navigation } from '@/lib/brand-config';
+import { Logo } from './Header';
+export function Footer() { return <footer className="container site-footer"><div className="footer-main"><div><a href="#top" aria-label="Brand It home"><Logo /></a><p>Built around your brand.</p></div><nav aria-label="Footer navigation">{navigation.map(item => <a key={item.id} href={`#${item.id}`}>{item.label}</a>)}<a href="#contact">Let’s talk ↗</a></nav></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Brand It</span><span>INDEPENDENT THINKING. DISTINCTIVE DESIGN.</span><a href="#top">Back to top ↑</a></div></footer>; }

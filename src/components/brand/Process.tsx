@@ -1,0 +1,3 @@
+import { process } from '@/lib/brand-config';
+import { ArrowRight } from 'lucide-react';
+export function Process() { return <section className="process-section container"><p className="eyebrow">03 / HOW IT COMES TOGETHER</p><div className="process-grid">{process.map((step, i) => <div className="process-step" key={step.name}><div className="step-top"><span>0{i + 1}</span><ArrowRight size={20} /></div><h3>{step.name}</h3><p>{step.text}</p></div>)}</div></section>; }

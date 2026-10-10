@@ -1,0 +1,7 @@
+import * as Dialog from '@radix-ui/react-dialog';
+import { X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import type { Project } from '@/lib/brand-config';
+export function ProjectDialog({ project, open, onOpenChange, children }: { project: Project; open: boolean; onOpenChange: (open: boolean) => void; children: React.ReactNode }) {
+  return <Dialog.Root open={open} onOpenChange={onOpenChange}><Dialog.Trigger asChild>{children}</Dialog.Trigger><Dialog.Portal><Dialog.Overlay className="dialog-overlay" /><Dialog.Content className="project-dialog"><div className="dialog-top"><div><p className="eyebrow">CONCEPT PROJECT / NOT COMMISSIONED</p><Dialog.Title>{project.name}</Dialog.Title></div><Dialog.Close asChild><Button variant="control" size="icon" aria-label="Close case study"><X /></Button></Dialog.Close></div><img src={project.image} alt={`${project.name} concept artwork`} width={project.width} height={project.height} className="dialog-art" /><Dialog.Description className="dialog-description">{project.discipline} — an independent concept exploration by Brand It, not a client commission.</Dialog.Description><div className="dialog-details"><div><h3>Concept brief</h3><p>{project.brief}</p></div><div><h3>Design approach</h3><p>{project.approach}</p></div><div><h3>Deliverables</h3><ul>{project.deliverables.map(item => <li key={item}>{item}</li>)}</ul></div></div></Dialog.Content></Dialog.Portal></Dialog.Root>;
+}
