@@ -1,4 +1,5 @@
 <!-- LOVABLE:BEGIN -->
+
 > [!IMPORTANT]
 > This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
 > published git history — force pushing, or rebasing/amending/squashing commits
@@ -7,9 +8,11 @@
 >
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
+
 <!-- LOVABLE:END -->
 
 ## Website architecture
+
 - Keep Brand It as a single-page frontend using section anchors, not separate routes, because the enquiry journey is continuous.
 - Keep editable brand content, service categories, project metadata and enquiry validation in a typed shared configuration, so client revisions stay contained.
 - Use Radix primitives for project dialogs and service accordions, with semantic CSS tokens, so custom presentation retains accessible behavior.

@@ -13,7 +13,7 @@ export function Logo() {
   );
 }
 
-const SECTION_IDS = ["work", "expertise", "studio"];
+const SECTION_IDS = ["work", "expertise", "studio", "contact"];
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -54,8 +54,12 @@ export function Header() {
     return () => observer.disconnect();
   }, []);
 
+  const isDark = active === "expertise" || active === "contact";
+
   return (
-    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+    <header
+      className={`site-header ${scrolled ? "is-scrolled" : ""} ${isDark ? "is-dark-theme" : ""}`}
+    >
       <div className="container header-inner">
         <a href="#top" aria-label="the brandit. — back to top" onClick={() => setOpen(false)}>
           <Logo />

@@ -105,55 +105,59 @@ export function Hero() {
             </Button>
           </div>
         </div>
-        <div
-          className="hero-stage"
-          data-active={active}
-          role="group"
-          aria-label="Campaign stage with three concept artworks"
-        >
-          {PIECES.map((piece) => {
-            const project = projects.find((item) => item.id === piece.project);
-            if (!project) return null;
-            return (
-              <figure
-                key={piece.key}
-                className={`stage-piece ${piece.cls}`}
-                data-front={active === piece.key ? "true" : "false"}
-              >
-                <img
-                  src={project.image}
-                  alt={`${project.name} — ${project.discipline.toLowerCase()} concept artwork`}
-                  width={project.width}
-                  height={project.height}
-                  fetchPriority={piece.key === "poster" ? "high" : "auto"}
-                />
-                {active === piece.key && (
-                  <figcaption className="piece-label">
-                    {piece.num} / {piece.label}
-                  </figcaption>
-                )}
-              </figure>
-            );
-          })}
-        </div>
-        <p className="stage-caption">
-          <span className="stage-caption-label">The stage</span>
-          <span className="stage-caption-text">{activePiece.caption}</span>
-        </p>
-        <div className="hero-selectors" role="group" aria-label="Choose a discipline">
-          {PIECES.map((piece) => (
-            <button
-              key={piece.key}
-              type="button"
-              className="selector"
-              aria-pressed={active === piece.key}
-              onClick={() => setActive(piece.key)}
-            >
-              <i className="selector-sq" aria-hidden="true" />
-              <span className="selector-num">{piece.num}</span>
-              {piece.label}
-            </button>
-          ))}
+        <div className="hero-stage-column">
+          <div
+            className="hero-stage"
+            data-active={active}
+            role="group"
+            aria-label="Campaign stage with three concept artworks"
+          >
+            {PIECES.map((piece) => {
+              const project = projects.find((item) => item.id === piece.project);
+              if (!project) return null;
+              return (
+                <figure
+                  key={piece.key}
+                  className={`stage-piece ${piece.cls}`}
+                  data-front={active === piece.key ? "true" : "false"}
+                >
+                  <img
+                    src={project.image}
+                    alt={`${project.name} — ${project.discipline.toLowerCase()} concept artwork`}
+                    width={project.width}
+                    height={project.height}
+                    fetchPriority={piece.key === "poster" ? "high" : "auto"}
+                  />
+                  {active === piece.key && (
+                    <figcaption className="piece-label">
+                      {piece.num} / {piece.label}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+            })}
+          </div>
+          <div className="hero-stage-controls">
+            <div className="hero-selectors" role="group" aria-label="Choose a discipline">
+              {PIECES.map((piece) => (
+                <button
+                  key={piece.key}
+                  type="button"
+                  className="selector"
+                  aria-pressed={active === piece.key}
+                  onClick={() => setActive(piece.key)}
+                >
+                  <i className="selector-sq" aria-hidden="true" />
+                  <span className="selector-num">{piece.num}</span>
+                  {piece.label}
+                </button>
+              ))}
+            </div>
+            <p className="stage-caption">
+              <span className="stage-caption-label">The stage:</span>
+              <span className="stage-caption-text">{activePiece.caption}</span>
+            </p>
+          </div>
         </div>
       </div>
       <div className="hero-bottom">

@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/brand/Header";
+import { Preloader } from "@/components/brand/Preloader";
 import { Hero } from "@/components/brand/Hero";
+import { LogoMarquee } from "@/components/brand/LogoMarquee";
 import { SelectedWork } from "@/components/brand/SelectedWork";
 import { Expertise } from "@/components/brand/Expertise";
 import { BrandStudy } from "@/components/brand/BrandStudy";
@@ -32,12 +34,14 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div id="top">
+      <Preloader />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
       <Header />
       <main id="main">
         <Hero />
+        <LogoMarquee />
         <SelectedWork />
         <Expertise />
         <BrandStudy />

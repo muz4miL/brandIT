@@ -17,7 +17,7 @@ export function SelectedWork() {
     >
       <Button
         variant="project"
-        className={leadProject ? "project-lead-button" : undefined}
+        className={leadProject ? "project-lead-button" : "project-card-button"}
         aria-label={`Open the ${project.name} concept case study`}
       >
         <span className="project-media">
@@ -31,9 +31,16 @@ export function SelectedWork() {
           <span className="concept-label">Concept project</span>
         </span>
         <span className="project-caption">
-          <span className="project-name">{project.name}</span>
           <span className="project-discipline">{project.discipline}</span>
-          <span className="project-intent">{project.intent}</span>
+          <span className="project-name">{project.name}</span>
+          <p className="project-intent">{project.intent}</p>
+          <span className="project-deliverables-pills">
+            {project.deliverables.map((d) => (
+              <span key={d} className="project-pill">
+                {d}
+              </span>
+            ))}
+          </span>
           <span className="project-action">
             Explore concept <ArrowUpRight size={14} />
           </span>
@@ -56,14 +63,14 @@ export function SelectedWork() {
         </p>
       </Reveal>
       {lead && (
-        <Reveal className="work-lead" delay={60}>
-          <article className="project project-0">{renderProject(lead, true)}</article>
+        <Reveal className="work-lead-container" delay={60}>
+          <article className="project project-lead">{renderProject(lead, true)}</article>
         </Reveal>
       )}
       <Reveal className="work-supports" delay={120}>
         {supports.map((project) => (
-          <article key={project.id} className="project">
-            {renderProject(project)}
+          <article key={project.id} className="project project-support">
+            {renderProject(project, false)}
           </article>
         ))}
       </Reveal>

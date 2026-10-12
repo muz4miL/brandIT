@@ -6,10 +6,8 @@ import { z } from "zod";
 
 export const brand = {
   name: "Brand It",
-  // Recreated vector lockup using the supplied identity's exact wording
-  // ("the brandit."). Replace with the original supplied asset when the
-  // client provides the source file, and derive the favicon from it.
-  logo: wordmark,
+  // The actual supplied identity asset from public/wordmark.png ("the brandit.")
+  logo: "/wordmark.png",
   email: null,
   phone: null,
   social: null,
